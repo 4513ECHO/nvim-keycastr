@@ -1,0 +1,87 @@
+*keycastr.txt*                                     Visualize typed key strokes
+
+Author: Hibiki <mail@4513echo.dev>
+License: MIT License
+URL: https://github.com/4513ECHO/nvim-keycastr
+Last change: 2024 Apr 01
+
+==============================================================================
+CONTENTS                                                   *keycastr-contents*
+
+Introduction					|keycastr-introduction|
+Interface					|keycastr-interface|
+  Lua Interface					|keycastr-lua-interface|
+  Options					|keycastr-options|
+About						|keycastr-about|
+
+==============================================================================
+INTRODUCTION                                           *keycastr-introduction*
+
+*keycastr* ( *nvim-keycastr* ) is a plugin to visualize typed key strokes in
+the floating window, inspired by KeyCastr in macOS.
+
+https://github.com/keycastr/keycastr
+
+Neovim v0.10.0+ after following commit is required:
+
+https://github.com/neovim/neovim/commit/e1ff2c51cad755d0ddc04a23df23e317d77023ed
+
+==============================================================================
+INTERFACE                                                 *keycastr-interface*
+
+------------------------------------------------------------------------------
+LUA INTERFACE                                         *keycastr-lua-interface*
+
+"keycastr" is a module from `require('keycastr')`.
+
+keycastr.config.get()                                  *keycastr.config.get()*
+	Return the current configuration of the plugin.
+
+keycastr.config.set({config})                          *keycastr.config.set()*
+	Set the configuration of the plugin.
+	See also |keycastr-options| for the configuration.
+
+keycastr.enable()                                          *keycastr.enable()*
+	Enable the visualizer and open the window.
+
+keycastr.disable()                                        *keycastr.disable()*
+	Diable the visualizer and close the window.
+
+keycastr.show()                                              *keycastr.show()*
+	(Re-)open the visualizer window.
+	|keycastr.enable()| must be called before calling this function.
+
+keycastr.hide()                                              *keycastr.hide()*
+	Hide the visualizer window but the visualizer is still enabled in
+	background. Use |keycastr.show()| to show the window again.
+
+------------------------------------------------------------------------------
+OPTIONS                                                     *keycastr-options*
+
+ignore_mouse                                    *keycastr-option-ignore_mouse*
+		|Boolean| (default: |v:true|)
+	Whether ignores keys from mouse events, for example |<LeftMouse>|,
+	|<RightDrag>|, |<ScrollWheelUp>|, etc.
+
+win_config                                        *keycastr-option-win_config*
+		|Dictionary| (default: `{ width = 50, height = 1 }`)
+	Configurations for the visualizer window.
+	See also |nvim_open_win()| for descriptions of the options.
+	To set "anchor", "row" and "col" values, use
+	|keycastr-option-position| instead.
+
+position                                            *keycastr-option-position*
+		|String| (enum of `"NE"|"NW"|"SE"|"SW"`, default: "NE")
+	Higher layer for "anchor", "row" and "col" values for
+	|keycastr-option-win_config|.
+
+==============================================================================
+ABOUT                                                         *keycastr-about*
+
+|keycastr| is developed by Hibiki(4513ECHO) and licensed under the MIT
+License. Visit the project page for the latest version:
+
+	https://github.com/4513ECHO/nvim-keycastr
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
