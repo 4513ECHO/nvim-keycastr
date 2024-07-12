@@ -3,7 +3,7 @@
 Author: Hibiki <mail@4513echo.dev>
 License: MIT License
 URL: https://github.com/4513ECHO/nvim-keycastr
-Last change: 2024 Apr 01
+Last change: 2024 Jul 13
 
 ==============================================================================
 CONTENTS                                                   *keycastr-contents*
@@ -22,9 +22,8 @@ the floating window, inspired by KeyCastr in macOS.
 
 https://github.com/keycastr/keycastr
 
-Neovim v0.10.0+ after following commit is required:
-
-https://github.com/neovim/neovim/commit/e1ff2c51cad755d0ddc04a23df23e317d77023ed
+Neovim v0.10.0+ or Vim v9.1.0568+ is required.
+(But Vim support is experimental and not documented well.)
 
 ==============================================================================
 INTERFACE                                                 *keycastr-interface*
