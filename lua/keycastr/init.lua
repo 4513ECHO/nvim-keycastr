@@ -125,6 +125,7 @@ function M.show()
   local bufnr = state and state.bufnr or vim.api.nvim_create_buf(false, true)
   local winid = vim.api.nvim_open_win(bufnr, false, config_to_open_win(config))
   vim.api.nvim_set_option_value("cursorline", false, { win = winid })
+  vim.api.nvim_set_option_value("wrap", false, { win = winid })
   if state then
     state.winid = winid
   else
